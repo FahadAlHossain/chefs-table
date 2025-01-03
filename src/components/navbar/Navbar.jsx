@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="navbar bg-white w-full md:w-4/5 m-auto p-4 md:p-7 flex items-center justify-between">
+    <div className="navbar w-full md:w-4/5 m-auto p-4 md:pt-7 flex items-center justify-between">
       {/* Title Section */}
       <div className="flex items-center">
         <a className="text-black text-2xl font-bold">Recipe Calories</a>
@@ -59,7 +59,7 @@ const Navbar = () => {
             placeholder="Search"
             className="bg-slate-200 rounded-3xl placeholder-gray-600 p-2 pl-9 md:w-56"
           />
-          <CiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 font-bold text-xl" />
+          <CiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 font-bold text-xl cursor-pointer" />
         </div>
 
         {/* Profile Avatar */}

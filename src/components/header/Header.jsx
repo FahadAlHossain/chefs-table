@@ -3,7 +3,7 @@ import cover from "../../assets/images/cover.png";
 const Header = () => {
   return (
     <div
-      className="bg-cover bg-center h-[550px] md:w-[77%] flex items-center justify-center text-center text-white rounded-xl mt-5 m-auto"
+      className="bg-cover bg-center h-[550px] md:w-[80%] flex items-center justify-center text-center text-white rounded-xl mt-5 m-auto"
       style={{
         backgroundImage: `url(${cover})`,
       }}
