@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Cooks from "./components/cooks/Cooks";
 import Header from "./components/header/Header";
@@ -10,6 +12,11 @@ function App() {
   const [cooks, setCooks] = useState([]);
 
   const handleAddToCook = recipe =>{
+    const isDuplicate = cooks.some(cook => cook.recipe_id === recipe.recipe_id);
+    if(isDuplicate){
+      toast.error("This recipe is already added!");
+      return;
+    }
     const newRecipe = [...cooks, recipe];
     setCooks(newRecipe);
   }
@@ -23,6 +30,10 @@ function App() {
         <Recipes handleAddToCook={handleAddToCook}></Recipes>
         <Cooks cooks={cooks}></Cooks>
       </div>
+      <ToastContainer 
+        position="top-right" 
+        autoClose={3000} 
+      />
     </>
   );
 }

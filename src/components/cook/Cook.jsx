@@ -1,16 +1,16 @@
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 
 const Cook = ({ cook, count }) => {
   const { recipe_name, preparing_time, calories } = cook;
 
   return (
-    <tr className="bg-gray-100 border-none text-gray-600">
-      <th>{count}</th>
-      <td className="pr-5">{recipe_name}</td>
-      <td className="pr-5">{preparing_time}</td>
-      <td>{calories}</td>
-      <td>
-        <button className="bg-green-500 text-black font-medium px-2 py-2 rounded-full hover:bg-red-100">
+    <tr className="bg-gray-100 border-b border-gray-200 text-gray-600">
+      <th className="p-2">{count}</th>
+      <td className="p-2">{recipe_name}</td>
+      <td className="p-2">{preparing_time}</td>
+      <td className="p-2">{calories}</td>
+      <td className="p-2">
+        <button className="bg-green-500 text-black font-medium px-4 py-2 rounded-full hover:bg-red-200 transition-all">
           Preparing
         </button>
       </td>
@@ -18,9 +18,9 @@ const Cook = ({ cook, count }) => {
   );
 };
 
-Cook.proptypes = {
-  cook: PropTypes.object,
-  count: PropTypes.number,
+Cook.propTypes = {
+  cook: PropTypes.object.isRequired,
+  count: PropTypes.number.isRequired,
 };
 
 export default Cook;
