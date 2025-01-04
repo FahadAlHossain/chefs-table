@@ -68,8 +68,8 @@ The **Cooking Recipe Manager** is a React-based web application that allows user
 ## 📸 Screenshots
 - **Home Page**
   ![image alt](https://github.com/FahadAlHossain/chefs-table/blob/01f72bd5cf7f84696a978277f675ec4f980176d3/Screenshot%202025-01-05%20024955.png)
-- **Want to Cook List**
-- **Cooking List**
+- **Recipe Page**
+  ![image alt](https://github.com/FahadAlHossain/chefs-table/blob/724e72bb3a6f1a06044ff34ad311be337afdd890/Screenshot%202025-01-05%20025119.png)
 
 ## 🐞 Troubleshooting
 - Ensure you have the latest version of Node.js installed.
