@@ -12,8 +12,8 @@
         "1 cucumber",
         "100 g cherry tomatoes"
       ],
-      "preparing_time": "30 min",
-      "calories": "320 calories"
+      "preparing_time": 30,
+      "calories": 320
     },
     {
       "recipe_id": 2,
@@ -28,8 +28,8 @@
         "2 cloves garlic",
         "1 sprig rosemary"
       ],
-      "preparing_time": "25 min",
-      "calories": "400 calories"
+      "preparing_time": 25,
+      "calories": 400
     },
     {
       "recipe_id": 3,
@@ -44,8 +44,8 @@
         "1 onion",
         "1 tsp lemon juice"
       ],
-      "preparing_time": "40 min",
-      "calories": "250 calories"
+      "preparing_time": 40,
+      "calories": 250
     },
     {
       "recipe_id": 4,
@@ -60,8 +60,8 @@
         "Salt and pepper",
         "120 ml soy sauce"
       ],
-      "preparing_time": "35 min",
-      "calories": "500 calories"
+      "preparing_time": 35,
+      "calories": 500
     },
     {
       "recipe_id": 5,
@@ -76,8 +76,8 @@
         "Chili flakes",
         "100 g basil leaves"
       ],
-      "preparing_time": "10 min",
-      "calories": "220 calories"
+      "preparing_time": 10,
+      "calories": 220 
     },
     {
       "recipe_id": 6,
@@ -92,8 +92,8 @@
         "1 tbsp olive oil",
         "2 large eggs"
       ],
-      "preparing_time": "20 min",
-      "calories": "180 calories"
+      "preparing_time": 20,
+      "calories": 180
     }
   ]
   

@@ -7,11 +7,11 @@ const Cook = ({ cook, count, moveToCooking }) => {
     <tr className="bg-gray-100 border-b border-gray-200 text-gray-600">
       <th className="p-2">{count}</th>
       <td className="p-2">{recipe_name}</td>
-      <td className="p-2">{preparing_time}</td>
-      <td className="p-2">{calories}</td>
+      <td className="p-2">{preparing_time} min</td>
+      <td className="p-2">{calories} calories</td>
       <td className="p-2">
         <button
-          onClick={() => moveToCooking(cook, cook.recipe_id)}
+          onClick={() => moveToCooking(cook, cook.recipe_id, preparing_time, calories)}
           className="bg-green-500 text-black font-medium px-4 py-2 rounded-full hover:bg-red-200 transition-all"
         >
           Preparing

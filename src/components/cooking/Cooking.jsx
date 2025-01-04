@@ -9,6 +9,7 @@ const Cooking = ({cook, count}) => {
       <td className="p-2">{preparing_time}</td>
       <td className="p-2">{calories}</td>
     </tr>
+    
   );
 };
 

@@ -9,20 +9,15 @@ import OurRecipe from "./components/our-recipe/OurRecipe";
 import Recipes from "./components/recipes/Recipes";
 
 function App() {
-  const [cooks, setCooks] = useState([]); 
-  const [cooking, setCooking] = useState([]); 
+  const [cooks, setCooks] = useState([]);
+  const [cooking, setCooking] = useState([]);
+  const [time, setTime] = useState(0);
+  const [calorie, setCalorie] = useState(0);
 
   const handleAddToCook = (recipe) => {
-  
-    if (cooking.some((cook) => cook.recipe_id === recipe.recipe_id)) {
-      setCooks((prevCooks) => [...prevCooks, recipe]);
-      setCooking((prevCooking) =>
-        prevCooking.filter((cook) => cook.recipe_id !== recipe.recipe_id)
-      );
-      return;
-    }
-
-    const isDuplicate = cooks.some((cook) => cook.recipe_id === recipe.recipe_id);
+    const isDuplicate = cooks.some(
+      (cook) => cook.recipe_id === recipe.recipe_id
+    );
     if (isDuplicate) {
       toast.error("This recipe is already added!");
       return;
@@ -31,10 +26,15 @@ function App() {
     setCooks((prevCooks) => [...prevCooks, recipe]);
   };
 
-  const moveToCooking = (recipe, id) => {
-    if (!cooking.some((cook) => cook.recipe_id === id)) {
+  const moveToCooking = (recipe, id, recipeTime, totalCalories) => {
+    setTime(time + recipeTime);
+    setCalorie(calorie + totalCalories);
+    const addItem = cooking.some((cook) => cook.recipe_id === id);
+    if (addItem || !addItem) {
       setCooking((prevCooking) => [...prevCooking, recipe]);
-      setCooks((prevCooks) => prevCooks.filter((cook) => cook.recipe_id !== id));
+      setCooks((prevCooks) =>
+        prevCooks.filter((cook) => cook.recipe_id !== id)
+      );
     }
   };
 
@@ -45,7 +45,13 @@ function App() {
       <OurRecipe />
       <div className="md:flex max-w-7xl mx-auto">
         <Recipes handleAddToCook={handleAddToCook} />
-        <Cooks cooks={cooks} moveToCooking={moveToCooking} cooking={cooking} />
+        <Cooks
+          cooks={cooks}
+          moveToCooking={moveToCooking}
+          time={time}
+          calorie={calorie}
+          cooking={cooking}
+        />
       </div>
       <ToastContainer position="top-right" autoClose={3000} />
     </>
