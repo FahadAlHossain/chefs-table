@@ -11,6 +11,7 @@ const Recipe = ({ recipe, handleAddToCook }) => {
     preparing_time,
     calories,
   } = recipe;
+
   return (
     <div className="border-2 border-gray-300 rounded-xl px-5 leading-8">
       <img className="w-full h-48 rounded-xl my-4" src={recipe_image} alt="" />

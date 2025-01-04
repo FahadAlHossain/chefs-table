@@ -9,31 +9,45 @@ import OurRecipe from "./components/our-recipe/OurRecipe";
 import Recipes from "./components/recipes/Recipes";
 
 function App() {
-  const [cooks, setCooks] = useState([]);
+  const [cooks, setCooks] = useState([]); 
+  const [cooking, setCooking] = useState([]); 
 
-  const handleAddToCook = recipe =>{
-    const isDuplicate = cooks.some(cook => cook.recipe_id === recipe.recipe_id);
-    if(isDuplicate){
+  const handleAddToCook = (recipe) => {
+  
+    if (cooking.some((cook) => cook.recipe_id === recipe.recipe_id)) {
+      setCooks((prevCooks) => [...prevCooks, recipe]);
+      setCooking((prevCooking) =>
+        prevCooking.filter((cook) => cook.recipe_id !== recipe.recipe_id)
+      );
+      return;
+    }
+
+    const isDuplicate = cooks.some((cook) => cook.recipe_id === recipe.recipe_id);
+    if (isDuplicate) {
       toast.error("This recipe is already added!");
       return;
     }
-    const newRecipe = [...cooks, recipe];
-    setCooks(newRecipe);
-  }
+
+    setCooks((prevCooks) => [...prevCooks, recipe]);
+  };
+
+  const moveToCooking = (recipe, id) => {
+    if (!cooking.some((cook) => cook.recipe_id === id)) {
+      setCooking((prevCooking) => [...prevCooking, recipe]);
+      setCooks((prevCooks) => prevCooks.filter((cook) => cook.recipe_id !== id));
+    }
+  };
 
   return (
     <>
-      <Navbar></Navbar>
-      <Header></Header>
-      <OurRecipe></OurRecipe>
+      <Navbar />
+      <Header />
+      <OurRecipe />
       <div className="md:flex max-w-7xl mx-auto">
-        <Recipes handleAddToCook={handleAddToCook}></Recipes>
-        <Cooks cooks={cooks}></Cooks>
+        <Recipes handleAddToCook={handleAddToCook} />
+        <Cooks cooks={cooks} moveToCooking={moveToCooking} cooking={cooking} />
       </div>
-      <ToastContainer 
-        position="top-right" 
-        autoClose={3000} 
-      />
+      <ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 }
