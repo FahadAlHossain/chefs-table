@@ -26,8 +26,8 @@ const Recipe = ({ recipe, handleAddToCook }) => {
       </ul>
       <hr className="border mb-3"/>
       <div className="flex items-center text-gray-700 my-4">
-        <FaRegClock/> <span  className="pr-5 pl-1" >{preparing_time}</span>
-        <TbFlame/><span  className="pl-1" >{calories}</span>
+        <FaRegClock/> <span  className="pr-5 pl-1" >{preparing_time} min</span>
+        <TbFlame/><span  className="pl-1" >{calories} calories</span>
       </div>
       <button onClick={() => handleAddToCook(recipe)} className="bg-green-500 text-black font-medium px-6 py-2 mb-3 rounded-full hover:bg-red-100">
            Want to cook
